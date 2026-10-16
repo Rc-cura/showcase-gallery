@@ -6,7 +6,7 @@ function Navbar({ view, onChangeView }) {
         ? "bg-[#238636] text-white shadow-sm"
         : "text-[#8B949E] hover:bg-[#21262D] hover:text-[#E6EDF3]"
     }`;
-
+//j
   return (
     <nav className="sticky top-0 z-20 border-b border-[#30363D] bg-[#161B22]/95 backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
