@@ -1,12 +1,15 @@
-
 function ProductCard({
   product,
   showActions,
   onEdit,
   onDelete,
+  onCardClick,
 }) {
   return (
-    <article className="group overflow-hidden rounded-xl border border-[#30363D] bg-[#161B22] transition duration-300 hover:-translate-y-1 hover:border-[#484F58] hover:shadow-xl hover:shadow-black/20">
+    <article 
+      onClick={() => onCardClick && onCardClick(product)}
+      className="group cursor-pointer overflow-hidden rounded-xl border border-[#30363D] bg-[#161B22] transition duration-300 hover:-translate-y-1 hover:border-[#484F58] hover:shadow-xl hover:shadow-black/20"
+    >
       <div className="relative aspect-[4/3] overflow-hidden bg-[#0D1117]">
         <img
           src={product.image}
@@ -29,7 +32,10 @@ function ProductCard({
         </p>
 
         {showActions && (
-          <div className="mt-5 flex gap-2 border-t border-[#30363D] pt-4">
+          <div 
+            className="mt-5 flex gap-2 border-t border-[#30363D] pt-4" 
+            onClick={(e) => e.stopPropagation()}
+          >
             <button
               onClick={() => onEdit(product)}
               className="flex-1 rounded-lg border border-[#30363D] bg-[#21262D] py-2 text-sm font-medium text-[#E6EDF3] transition hover:border-[#484F58] hover:bg-[#30363D]"
